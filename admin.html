@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EliteBoost — Admin Dashboard</title>
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>" />
+</head>
+
+<body>
+
+  <!-- ════════════════ ADMIN NAVBAR ════════════════ -->
+  <nav class="fixed top-0 left-0 w-full z-50 bg-gaming-darker/95 backdrop-blur-lg border-b border-gaming-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="/" class="flex items-center gap-2 text-xl font-heading font-bold">
+          <span class="text-2xl">🎮</span>
+          <span class="gradient-text">EliteBoost</span>
+          <span class="text-gaming-gold text-sm font-normal ml-2">Admin</span>
+        </a>
+        <div class="flex items-center gap-4">
+          <a href="/" class="text-gaming-muted hover:text-white transition-colors text-sm">← Back to Site</a>
+          <button id="admin-logout" class="text-red-400 hover:text-red-300 transition-colors text-sm">Logout</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ════════════════ ADMIN CONTENT ════════════════ -->
+  <main class="pt-24 pb-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- ── Admin Access Denied (shown if not admin) ── -->
+      <div id="access-denied" class="hidden text-center py-20">
+        <div class="text-6xl mb-4">🔒</div>
+        <h1 class="text-2xl font-heading font-bold mb-2">Access Denied</h1>
+        <p class="text-gaming-muted mb-6">You need admin privileges to view this page.</p>
+        <a href="/" class="btn-primary">Go to Homepage</a>
+      </div>
+
+      <!-- ── Dashboard (shown if admin) ── -->
+      <div id="admin-dashboard" class="hidden">
+        <h1 class="text-3xl font-heading font-bold mb-8">Dashboard <span class="gradient-text">Overview</span></h1>
+
+        <!-- Stats Cards -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+          <div class="game-card p-6 text-center">
+            <div class="text-3xl font-heading font-black text-gaming-cyan" id="stat-users">0</div>
+            <div class="text-gaming-muted text-sm mt-1">Registered Users</div>
+          </div>
+          <div class="game-card p-6 text-center">
+            <div class="text-3xl font-heading font-black text-gaming-purple-light" id="stat-orders">0</div>
+            <div class="text-gaming-muted text-sm mt-1">Total Orders</div>
+          </div>
+          <div class="game-card p-6 text-center">
+            <div class="text-3xl font-heading font-black text-gaming-gold" id="stat-pending">0</div>
+            <div class="text-gaming-muted text-sm mt-1">Pending Orders</div>
+          </div>
+          <div class="game-card p-6 text-center">
+            <div class="text-3xl font-heading font-black text-green-400" id="stat-completed">0</div>
+            <div class="text-gaming-muted text-sm mt-1">Completed Orders</div>
+          </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="flex gap-2 mb-6 border-b border-gaming-border pb-2">
+          <button
+            class="admin-tab px-4 py-2 text-sm font-medium rounded-t-lg transition-colors bg-gaming-purple/20 text-gaming-purple-light"
+            data-tab="users">👥 Users</button>
+          <button
+            class="admin-tab px-4 py-2 text-sm font-medium rounded-t-lg transition-colors text-gaming-muted hover:text-white"
+            data-tab="orders">📦 Orders</button>
+        </div>
+
+        <!-- Users Table -->
+        <div id="panel-users" class="game-card p-0 overflow-hidden">
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="border-b border-gaming-border bg-gaming-dark/50">
+                  <th class="text-left p-4 font-medium text-gaming-muted">Name</th>
+                  <th class="text-left p-4 font-medium text-gaming-muted">Email</th>
+                  <th class="text-left p-4 font-medium text-gaming-muted">Role</th>
+                  <th class="text-left p-4 font-medium text-gaming-muted">Joined</th>
+                  <th class="text-left p-4 font-medium text-gaming-muted">Orders</th>
+                </tr>
+              </thead>
+              <tbody id="users-table-body"></tbody>
+            </table>
+          </div>
+          <div id="users-empty" class="hidden p-8 text-center text-gaming-muted">No registered users yet.</div>
+        </div>
+
+        <!-- Orders Table -->
+        <div id="panel-orders" class="game-card p-0 overflow-hidden hidden">
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="border-b border-gaming-border bg-gaming-dark/50">
+                  <th class="text-left p-4 font-medium text-gaming-muted">Order ID</th>
+                  <th class="text-left p-4 font-medium text-gaming-muted">Customer</th>
+                  <th class="text-left p-4 font-medium text-gaming-muted">Game</th>
+                  <th class="text-left p-4 font-medium text-gaming-muted">Details</th>
+                  <th class="text-left p-4 font-medium text-gaming-muted">Date</th>
+                  <th class="text-left p-4 font-medium text-gaming-muted">Status</th>
+                  <th class="text-left p-4 font-medium text-gaming-muted">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="orders-table-body"></tbody>
+            </table>
+          </div>
+          <div id="orders-empty" class="hidden p-8 text-center text-gaming-muted">No orders placed yet.</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="/src/admin.js"></script>
+</body>
+
+</html>

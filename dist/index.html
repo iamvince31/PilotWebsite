@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Professional Genshin Impact account piloting services. Maintenance, exploration, quests, and more — done safely by expert players." />
+  <title>EliteBoost — Genshin Impact Piloting Services</title>
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>" />
+  <script type="module" crossorigin src="/assets/index-lIRTn6hC.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-C4d6sVUi.css">
+</head>
+
+<body>
+
+  <!-- ════════════════ NAVBAR ════════════════ -->
+  <nav id="navbar" class="fixed top-0 left-0 w-full z-50 bg-transparent transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 md:h-20">
+        <a href="#" class="flex items-center gap-2 text-xl font-heading font-bold">
+          <span class="text-2xl">🎮</span>
+          <span class="gradient-text">EliteBoost</span>
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#services"
+            class="text-gaming-muted hover:text-white transition-colors text-sm font-medium">Services</a>
+          <a href="#how-it-works" class="text-gaming-muted hover:text-white transition-colors text-sm font-medium">How
+            It Works</a>
+          <a href="#safety" class="text-gaming-muted hover:text-white transition-colors text-sm font-medium">Safety</a>
+          <a href="#reviews"
+            class="text-gaming-muted hover:text-white transition-colors text-sm font-medium">Reviews</a>
+          <a href="#about" class="text-gaming-muted hover:text-white transition-colors text-sm font-medium">About</a>
+          <a href="#faq" class="text-gaming-muted hover:text-white transition-colors text-sm font-medium">FAQ</a>
+          <!-- Auth: Logged Out -->
+          <div id="nav-auth-guest" class="flex items-center gap-3">
+            <button id="nav-login-btn"
+              class="text-gaming-muted hover:text-white transition-colors text-sm font-medium">Login</button>
+            <button id="nav-register-btn" class="btn-primary text-sm !px-6 !py-2.5">Register</button>
+          </div>
+          <!-- Auth: Logged In -->
+          <div id="nav-auth-user" class="hidden flex items-center gap-3">
+            <a href="/admin.html" id="nav-admin-link"
+              class="hidden text-gaming-gold hover:text-yellow-300 transition-colors text-sm font-medium">⚙️ Admin</a>
+            <div class="relative" id="user-dropdown-container">
+              <button id="user-dropdown-btn"
+                class="flex items-center gap-2 text-sm font-medium text-gaming-cyan hover:text-white transition-colors">
+                <span
+                  class="w-8 h-8 rounded-full bg-gradient-to-br from-gaming-purple to-gaming-cyan flex items-center justify-center text-xs font-bold"
+                  id="nav-user-avatar">U</span>
+                <span id="nav-user-name">User</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div id="user-dropdown-menu" class="hidden absolute right-0 mt-2 w-48 game-card !p-2 z-50">
+                <a href="#contact"
+                  class="block px-4 py-2 text-sm text-gaming-muted hover:text-white hover:bg-white/5 rounded-lg transition-colors">📦
+                  My Orders</a>
+                <button id="nav-logout-btn"
+                  class="w-full text-left px-4 py-2 text-sm text-red-400 hover:text-red-300 hover:bg-white/5 rounded-lg transition-colors">🚪
+                  Logout</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button id="mobile-menu-btn" class="md:hidden text-gaming-muted hover:text-white p-2">
+          <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div id="mobile-menu" class="hidden md:hidden pb-4 border-t border-gaming-border">
+        <div class="flex flex-col gap-3 pt-4">
+          <a href="#services" class="text-gaming-muted hover:text-white transition-colors px-2 py-1">Services</a>
+          <a href="#how-it-works" class="text-gaming-muted hover:text-white transition-colors px-2 py-1">How It
+            Works</a>
+          <a href="#safety" class="text-gaming-muted hover:text-white transition-colors px-2 py-1">Safety</a>
+          <a href="#reviews" class="text-gaming-muted hover:text-white transition-colors px-2 py-1">Reviews</a>
+          <a href="#about" class="text-gaming-muted hover:text-white transition-colors px-2 py-1">About</a>
+          <a href="#faq" class="text-gaming-muted hover:text-white transition-colors px-2 py-1">FAQ</a>
+          <div id="mobile-auth-guest" class="flex flex-col gap-2 mt-2">
+            <button
+              class="mobile-login-btn text-gaming-muted hover:text-white transition-colors px-2 py-1 text-left">Login</button>
+            <button class="mobile-register-btn btn-primary text-sm text-center">Register</button>
+          </div>
+          <div id="mobile-auth-user" class="hidden flex flex-col gap-2 mt-2">
+            <span class="text-gaming-cyan text-sm px-2" id="mobile-user-name">User</span>
+            <a href="/admin.html" id="mobile-admin-link"
+              class="hidden text-gaming-gold hover:text-yellow-300 transition-colors px-2 py-1">⚙️ Admin Panel</a>
+            <button id="mobile-logout-btn"
+              class="text-red-400 hover:text-red-300 transition-colors px-2 py-1 text-left">🚪 Logout</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ════════════════ HERO ════════════════ -->
+  <section id="hero" class="hero-glow relative min-h-screen flex items-center pt-20">
+    <div class="section-container w-full">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="reveal inline-block mb-6 px-4 py-2 rounded-full glass text-sm text-gaming-cyan font-medium">
+          🔥 Trusted by 5,000+ Travelers Worldwide
+        </div>
+        <h1 class="reveal text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-black leading-tight mb-6">
+          Your Teyvat Account<br />
+          <span class="gradient-text animate-gradient-x" style="background-size:200% 200%">Handled By Pros</span>
+        </h1>
+        <p class="reveal text-lg md:text-xl text-gaming-muted max-w-2xl mx-auto mb-10 leading-relaxed">
+          Professional Genshin Impact piloting by expert players. Dailies, exploration, quests &amp; more — done safely
+          so you never miss a thing.
+        </p>
+        <div class="reveal flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <a href="#services" class="btn-primary text-lg">View Services</a>
+          <button class="btn-secondary text-lg order-btn">Order Now</button>
+        </div>
+        <!-- Trust Badges -->
+        <div class="reveal grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="glass p-4 text-center">
+            <div class="text-2xl mb-1">🛡️</div>
+            <div class="text-sm text-gaming-muted">Manual Play Only</div>
+          </div>
+          <div class="glass p-4 text-center">
+            <div class="text-2xl mb-1">🔒</div>
+            <div class="text-sm text-gaming-muted">VPN Protected</div>
+          </div>
+          <div class="glass p-4 text-center">
+            <div class="text-2xl mb-1">⚡</div>
+            <div class="text-sm text-gaming-muted">Fast Turnaround</div>
+          </div>
+          <div class="glass p-4 text-center">
+            <div class="text-2xl mb-1">💯</div>
+            <div class="text-sm text-gaming-muted">No Third-Party Tools</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ SERVICES ════════════════ -->
+  <section id="services" class="relative">
+    <div class="section-container">
+      <h2 class="section-title reveal">Our <span class="gradient-text">Services</span></h2>
+      <p class="section-subtitle reveal">Everything your Genshin Impact account needs — handled by expert Travelers.</p>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Maintenance -->
+        <div class="game-card reveal gradient-border">
+          <div class="text-3xl mb-3">🔧</div>
+          <h3 class="text-xl font-heading font-bold mb-2">Maintenance</h3>
+          <p class="text-gaming-muted text-sm mb-4">Daily commissions, resin spending, expeditions &amp; more — we keep
+            your account in top shape.</p>
+          <div class="space-y-2 text-sm mb-6">
+            <div class="flex justify-between"><span class="text-gaming-muted">Daily Login + Commissions</span><span
+                class="text-gaming-cyan font-semibold">$5/day</span></div>
+            <div class="flex justify-between"><span class="text-gaming-muted">Resin Spending (Domains)</span><span
+                class="text-gaming-cyan font-semibold">$8/day</span></div>
+            <div class="flex justify-between"><span class="text-gaming-muted">Weekly Bosses</span><span
+                class="text-gaming-cyan font-semibold">$10</span></div>
+            <div class="flex justify-between"><span class="text-gaming-muted">Full Weekly Package</span><span
+                class="text-gaming-cyan font-semibold">$40</span></div>
+          </div>
+          <div class="text-xs text-gaming-muted mb-4">⏱ Done daily, usually within 1–2 hours</div>
+          <button class="btn-primary w-full text-sm order-btn" data-game="maintenance">Order Maintenance</button>
+        </div>
+        <!-- Exploration -->
+        <div class="game-card reveal gradient-border">
+          <div class="text-3xl mb-3">🗺️</div>
+          <h3 class="text-xl font-heading font-bold mb-2">Exploration</h3>
+          <p class="text-gaming-muted text-sm mb-4">Full map exploration, chest hunting, waypoint unlocking &amp; region
+            completion.</p>
+          <div class="space-y-2 text-sm mb-6">
+            <div class="flex justify-between"><span class="text-gaming-muted">Single Region (100%)</span><span
+                class="text-gaming-cyan font-semibold">$25</span></div>
+            <div class="flex justify-between"><span class="text-gaming-muted">All Chests in Region</span><span
+                class="text-gaming-cyan font-semibold">$30</span></div>
+            <div class="flex justify-between"><span class="text-gaming-muted">Waypoints + Statues</span><span
+                class="text-gaming-cyan font-semibold">$15</span></div>
+            <div class="flex justify-between"><span class="text-gaming-muted">Full Map Completion</span><span
+                class="text-gaming-cyan font-semibold">$120</span></div>
+          </div>
+          <div class="text-xs text-gaming-muted mb-4">⏱ Est. 2–7 days depending on region size</div>
+          <button class="btn-primary w-full text-sm order-btn" data-game="exploration">Order Exploration</button>
+        </div>
+        <!-- Archon Quest -->
+        <div class="game-card reveal gradient-border">
+          <div class="text-3xl mb-3">📖</div>
+          <h3 class="text-xl font-heading font-bold mb-2">Archon Quest</h3>
+          <p class="text-gaming-muted text-sm mb-4">Main storyline completion through all acts and chapters.</p>
+          <div class="space-y-2 text-sm mb-6">
+            <div class="flex justify-between"><span class="text-gaming-muted">Single Chapter</span><span
+                class="text-gaming-cyan font-semibold">$15</span></div>
+            <div class="flex justify-between"><span class="text-gaming-muted">Full Region Story Arc</span><span
+                class="text-gaming-cyan font-semibold">$35</span></div>
+            <div class="flex justify-between"><span class="text-gaming-muted">All Archon Quests</span><span
+                class="text-gaming-cyan font-semibold">$100</span></div>
+            <div class="flex justify-between"><span class="text-gaming-muted">Includes Prerequisites</span><span
+                class="text-gaming-cyan font-semibold">+$10</span></div>
+          </div>
+          <div class="text-xs text-gaming-muted mb-4">⏱ Est. 1–3 days per story arc</div>
+          <button class="btn-primary w-full text-sm order-btn" data-game="archon-quest">Order Archon Quest</button>
+        </div>
+        <!-- Oculi Hunting -->
+        <div class="game-card reveal gradient-border">
+          <div class="text-3xl mb-3">✨</div>
+          <h3 class="text-xl font-heading font-bold mb-2">Oculi Hunting</h3>
+          <p class="text-gaming-muted text-sm mb-4">Collect every Anemoculus, Geoculus, Electroculus, Dendroculus &amp;
+            more.</p>
+          <div class="space-y-2 text-sm mb-6">
+            <div class="flex justify-between"><span class="text-gaming-muted">Single Region Oculi</span><span
+                class="text-gaming-cyan font-semibold">$20</span></div>
+            <div class="flex justify-between"><span class="text-gaming-muted">Statue Max Level</span><span
+                class="text-gaming-cyan font-semibold">$25</span></div>
+            <div class="flex justify-between"><span class="text-gaming-muted">All Regions Oculi</span><span
+                class="text-gaming-cyan font-semibold">$90</span></div>
+            <div class="flex justify-between"><span class="text-gaming-muted">+ Shrine of Depths Keys</span><span
+                class="text-gaming-cyan font-semibold">+$5</span></div>
+          </div>
+          <div class="text-xs text-gaming-muted mb-4">⏱ Est. 1–4 days per region</div>
+          <button class="btn-primary w-full text-sm order-btn" data-game="oculi">Order Oculi Hunting</button>
+        </div>
+        <!-- World Quests -->
+        <div class="game-card reveal gradient-border">
+          <div class="text-3xl mb-3">📜</div>
+          <h3 class="text-xl font-heading font-bold mb-2">World Quests</h3>
+          <p class="text-gaming-muted text-sm mb-4">Side quests, hidden quests, reputation quests &amp; achievement
+            unlocks.</p>
+          <div class="space-y-2 text-sm mb-6">
+            <div class="flex justify-between"><span class="text-gaming-muted">Single World Quest</span><span
+                class="text-gaming-cyan font-semibold">$5</span></div>
+            <div class="flex justify-between"><span class="text-gaming-muted">Region Quest Bundle</span><span
+                class="text-gaming-cyan font-semibold">$30</span></div>
+            <div class="flex justify-between"><span class="text-gaming-muted">All World Quests</span><span
+                class="text-gaming-cyan font-semibold">$80</span></div>
+            <div class="flex justify-between"><span class="text-gaming-muted">Reputation Max (Region)</span><span
+                class="text-gaming-cyan font-semibold">$20</span></div>
+          </div>
+          <div class="text-xs text-gaming-muted mb-4">⏱ Est. 1–5 days depending on volume</div>
+          <button class="btn-primary w-full text-sm order-btn" data-game="world-quests">Order World Quests</button>
+        </div>
+        <!-- Custom -->
+        <div class="game-card reveal gradient-border flex flex-col justify-between">
+          <div>
+            <div class="text-3xl mb-3">🎮</div>
+            <h3 class="text-xl font-heading font-bold mb-2">Custom Request</h3>
+            <p class="text-gaming-muted text-sm mb-4">Need something specific? We can handle almost anything on your
+              account.</p>
+            <div class="text-sm text-gaming-muted mb-6 space-y-1">
+              <div>✅ Spiral Abyss Clears</div>
+              <div>✅ Event Completion</div>
+              <div>✅ Material Farming</div>
+              <div>✅ Character Building</div>
+            </div>
+          </div>
+          <button class="btn-secondary w-full text-sm order-btn" data-game="custom">Request Custom Quote</button>
+        </div>
+      </div>
+      <p class="text-center text-gaming-muted text-sm mt-8 reveal">💬 <strong>Requirements:</strong> HoYoverse account
+        credentials
+        shared via secure encrypted channel. Stay offline during service for safety.</p>
+    </div>
+  </section>
+
+  <!-- ════════════════ HOW IT WORKS ════════════════ -->
+  <section id="how-it-works" class="relative bg-gaming-darker/50">
+    <div class="section-container">
+      <h2 class="section-title reveal">How It <span class="gradient-text">Works</span></h2>
+      <p class="section-subtitle reveal">Four simple steps from order to a fully maintained Teyvat account.</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="reveal game-card text-center relative">
+          <div
+            class="absolute -top-4 -left-4 w-10 h-10 rounded-full bg-gradient-to-br from-gaming-purple to-gaming-cyan flex items-center justify-center font-heading font-bold text-sm">
+            01</div>
+          <div class="text-4xl mb-4 mt-2">📋</div>
+          <h3 class="font-heading font-bold text-lg mb-2">Place Your Order</h3>
+          <p class="text-gaming-muted text-sm">Choose your service — dailies, exploration, quests, or a custom task.
+            Fill out the order form or message us on Discord.</p>
+        </div>
+        <div class="reveal game-card text-center relative">
+          <div
+            class="absolute -top-4 -left-4 w-10 h-10 rounded-full bg-gradient-to-br from-gaming-purple to-gaming-cyan flex items-center justify-center font-heading font-bold text-sm">
+            02</div>
+          <div class="text-4xl mb-4 mt-2">💳</div>
+          <h3 class="font-heading font-bold text-lg mb-2">Confirm & Pay</h3>
+          <p class="text-gaming-muted text-sm">We'll send you a quote. Pay securely via GCash, PayPal, or bank transfer.
+            No hidden fees.</p>
+        </div>
+        <div class="reveal game-card text-center relative">
+          <div
+            class="absolute -top-4 -left-4 w-10 h-10 rounded-full bg-gradient-to-br from-gaming-purple to-gaming-cyan flex items-center justify-center font-heading font-bold text-sm">
+            03</div>
+          <div class="text-4xl mb-4 mt-2">🎮</div>
+          <h3 class="font-heading font-bold text-lg mb-2">We Play</h3>
+          <p class="text-gaming-muted text-sm">Our expert Traveler logs in with VPN protection and completes your
+            requested tasks. 100% manual gameplay.</p>
+        </div>
+        <div class="reveal game-card text-center relative">
+          <div
+            class="absolute -top-4 -left-4 w-10 h-10 rounded-full bg-gradient-to-br from-gaming-purple to-gaming-cyan flex items-center justify-center font-heading font-bold text-sm">
+            04</div>
+          <div class="text-4xl mb-4 mt-2">🏆</div>
+          <h3 class="font-heading font-bold text-lg mb-2">Task Complete</h3>
+          <p class="text-gaming-muted text-sm">Once your tasks are finished, we notify you with proof. Change your
+            password and enjoy your progress!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ SAFETY ════════════════ -->
+  <section id="safety" class="relative">
+    <div class="section-container">
+      <h2 class="section-title reveal">Safety & <span class="gradient-text">Security</span></h2>
+      <p class="section-subtitle reveal">Your account's safety is our #1 priority. Here's how we protect you.</p>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div class="reveal glass p-6 text-center">
+          <div
+            class="w-14 h-14 rounded-xl bg-gradient-to-br from-gaming-purple/20 to-gaming-cyan/20 flex items-center justify-center mx-auto mb-4 text-3xl">
+            🖐️</div>
+          <h3 class="font-heading font-bold text-lg mb-2">Manual Play Only</h3>
+          <p class="text-gaming-muted text-sm">Every game is played by real human hands. No automation, no scripts, no
+            exceptions.</p>
+        </div>
+        <div class="reveal glass p-6 text-center">
+          <div
+            class="w-14 h-14 rounded-xl bg-gradient-to-br from-gaming-purple/20 to-gaming-cyan/20 flex items-center justify-center mx-auto mb-4 text-3xl">
+            🚫</div>
+          <h3 class="font-heading font-bold text-lg mb-2">Zero Cheats Policy</h3>
+          <p class="text-gaming-muted text-sm">We never use hacks, aimbots, wall hacks, or any third-party software.
+            Period.</p>
+        </div>
+        <div class="reveal glass p-6 text-center">
+          <div
+            class="w-14 h-14 rounded-xl bg-gradient-to-br from-gaming-purple/20 to-gaming-cyan/20 flex items-center justify-center mx-auto mb-4 text-3xl">
+            🌐</div>
+          <h3 class="font-heading font-bold text-lg mb-2">VPN Protection</h3>
+          <p class="text-gaming-muted text-sm">We match your region's VPN to avoid suspicious login alerts and location
+            flags.</p>
+        </div>
+        <div class="reveal glass p-6 text-center">
+          <div
+            class="w-14 h-14 rounded-xl bg-gradient-to-br from-gaming-purple/20 to-gaming-cyan/20 flex items-center justify-center mx-auto mb-4 text-3xl">
+            🤐</div>
+          <h3 class="font-heading font-bold text-lg mb-2">No Chatting or Spending</h3>
+          <p class="text-gaming-muted text-sm">We don't interact with your friends list, spend currency, or chat
+            in-game.</p>
+        </div>
+        <div class="reveal glass p-6 text-center">
+          <div
+            class="w-14 h-14 rounded-xl bg-gradient-to-br from-gaming-purple/20 to-gaming-cyan/20 flex items-center justify-center mx-auto mb-4 text-3xl">
+            🔑</div>
+          <h3 class="font-heading font-bold text-lg mb-2">Password Change</h3>
+          <p class="text-gaming-muted text-sm">Change your password immediately after service is complete. We encourage
+            it.</p>
+        </div>
+        <div class="reveal glass p-6 text-center">
+          <div
+            class="w-14 h-14 rounded-xl bg-gradient-to-br from-gaming-purple/20 to-gaming-cyan/20 flex items-center justify-center mx-auto mb-4 text-3xl">
+            🔐</div>
+          <h3 class="font-heading font-bold text-lg mb-2">Encrypted Credentials</h3>
+          <p class="text-gaming-muted text-sm">Your login details are shared through encrypted channels and deleted
+            after service.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ REVIEWS & PROOF ════════════════ -->
+  <section id="reviews" class="relative bg-gaming-darker/50">
+    <div class="section-container">
+      <h2 class="section-title reveal">Proof & <span class="gradient-text">Reviews</span></h2>
+      <p class="section-subtitle reveal">Real results from real Travelers. See why thousands trust EliteBoost.</p>
+      <!-- Stats -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+        <div class="reveal game-card text-center py-8">
+          <div class="text-3xl md:text-4xl font-heading font-black text-gaming-cyan stat-number" data-target="5200"
+            data-suffix="+">0</div>
+          <div class="text-gaming-muted text-sm mt-1">Services Completed</div>
+        </div>
+        <div class="reveal game-card text-center py-8">
+          <div class="text-3xl md:text-4xl font-heading font-black text-gaming-purple-light stat-number"
+            data-target="99" data-suffix="%">0</div>
+          <div class="text-gaming-muted text-sm mt-1">Satisfaction Rate</div>
+        </div>
+        <div class="reveal game-card text-center py-8">
+          <div class="text-3xl md:text-4xl font-heading font-black text-gaming-pink stat-number" data-target="50"
+            data-suffix="+">0</div>
+          <div class="text-gaming-muted text-sm mt-1">Pro Boosters</div>
+        </div>
+        <div class="reveal game-card text-center py-8">
+          <div class="text-3xl md:text-4xl font-heading font-black text-gaming-gold stat-number" data-target="0"
+            data-suffix="">0 Bans</div>
+          <div class="text-gaming-muted text-sm mt-1">Ban Record</div>
+        </div>
+      </div>
+      <!-- Testimonials -->
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="reveal game-card">
+          <div class="flex items-center gap-1 text-gaming-gold mb-3">⭐⭐⭐⭐⭐</div>
+          <p class="text-sm text-gaming-muted mb-4 italic">"Got my Sumeru 100% explored in just 3 days.
+            Incredible service. My account was completely safe and they communicated the whole time."</p>
+          <div class="flex items-center gap-3">
+            <div
+              class="w-10 h-10 rounded-full bg-gradient-to-br from-gaming-purple to-gaming-cyan flex items-center justify-center font-bold text-sm">
+              AK</div>
+            <div>
+              <div class="font-semibold text-sm">Alex K.</div>
+              <div class="text-xs text-gaming-muted">Genshin • Full Sumeru Exploration</div>
+            </div>
+          </div>
+        </div>
+        <div class="reveal game-card">
+          <div class="flex items-center gap-1 text-gaming-gold mb-3">⭐⭐⭐⭐⭐</div>
+          <p class="text-sm text-gaming-muted mb-4 italic">"I was too busy to do dailies for weeks. EliteBoost kept
+            my account maintained perfectly. All weeklies done, resin spent, events cleared. Will definitely use again."
+          </p>
+          <div class="flex items-center gap-3">
+            <div
+              class="w-10 h-10 rounded-full bg-gradient-to-br from-gaming-pink to-gaming-purple flex items-center justify-center font-bold text-sm">
+              SM</div>
+            <div>
+              <div class="font-semibold text-sm">Sarah M.</div>
+              <div class="text-xs text-gaming-muted">Genshin • Daily Maintenance</div>
+            </div>
+          </div>
+        </div>
+        <div class="reveal game-card">
+          <div class="flex items-center gap-1 text-gaming-gold mb-3">⭐⭐⭐⭐⭐</div>
+          <p class="text-sm text-gaming-muted mb-4 italic">"Was skeptical at first but these guys are legit. Got all
+            my Oculi collected and all Archon Quests done. Smooth process, great communication."</p>
+          <div class="flex items-center gap-3">
+            <div
+              class="w-10 h-10 rounded-full bg-gradient-to-br from-gaming-cyan to-gaming-purple flex items-center justify-center font-bold text-sm">
+              JR</div>
+            <div>
+              <div class="font-semibold text-sm">Jake R.</div>
+              <div class="text-xs text-gaming-muted">Genshin • Oculi + Archon Quests</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ ABOUT US ════════════════ -->
+  <section id="about" class="relative">
+    <div class="section-container">
+      <h2 class="section-title reveal">About <span class="gradient-text">EliteBoost</span></h2>
+      <p class="section-subtitle reveal">A team of dedicated Travelers helping you make the most of your Genshin
+        account.</p>
+      <div class="max-w-4xl mx-auto reveal">
+        <div class="game-card p-8 md:p-12">
+          <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <h3 class="font-heading font-bold text-2xl mb-4">Built by Travelers, for Travelers</h3>
+              <p class="text-gaming-muted mb-4 leading-relaxed">We started EliteBoost in 2020 as a small group of
+                AR60 players who wanted to help busy Travelers keep up with Genshin Impact —
+                without missing dailies, events, or new content.</p>
+              <p class="text-gaming-muted mb-6 leading-relaxed">Today, our team has grown to 50+ verified expert
+                players. Every pilot on our team is manually vetted, has reached AR60 with extensive Spiral Abyss
+                experience, and follows our strict safety protocols.</p>
+              <div class="space-y-2">
+                <div class="flex items-center gap-3 text-sm"><span class="text-gaming-cyan">✓</span> AR60 expert
+                  players on every account</div>
+                <div class="flex items-center gap-3 text-sm"><span class="text-gaming-cyan">✓</span> Strict no
+                  third-party tools policy</div>
+                <div class="flex items-center gap-3 text-sm"><span class="text-gaming-cyan">✓</span> 24/7 customer
+                  support via Discord</div>
+                <div class="flex items-center gap-3 text-sm"><span class="text-gaming-cyan">✓</span> 5,000+ successful
+                  services and counting</div>
+              </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="glass p-4 text-center">
+                <div class="text-2xl mb-2">🎯</div>
+                <div class="text-gaming-cyan font-heading font-bold text-xl">6+</div>
+                <div class="text-xs text-gaming-muted">Years Experience</div>
+              </div>
+              <div class="glass p-4 text-center">
+                <div class="text-2xl mb-2">🌍</div>
+                <div class="text-gaming-purple-light font-heading font-bold text-xl">30+</div>
+                <div class="text-xs text-gaming-muted">Countries Served</div>
+              </div>
+              <div class="glass p-4 text-center">
+                <div class="text-2xl mb-2">🎮</div>
+                <div class="text-gaming-pink font-heading font-bold text-xl">15+</div>
+                <div class="text-xs text-gaming-muted">Games Supported</div>
+              </div>
+              <div class="glass p-4 text-center">
+                <div class="text-2xl mb-2">💬</div>
+                <div class="text-gaming-gold font-heading font-bold text-xl">24/7</div>
+                <div class="text-xs text-gaming-muted">Live Support</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ FAQ ════════════════ -->
+  <section id="faq" class="relative bg-gaming-darker/50">
+    <div class="section-container">
+      <h2 class="section-title reveal">Frequently Asked <span class="gradient-text">Questions</span></h2>
+      <p class="section-subtitle reveal">Everything you need to know before placing your order.</p>
+      <div class="max-w-3xl mx-auto space-y-3 reveal">
+        <!-- Q1 -->
+        <div class="game-card !p-0 overflow-hidden">
+          <button
+            class="faq-toggle w-full flex items-center justify-between p-5 text-left hover:bg-white/5 transition-colors">
+            <span class="font-heading font-semibold">Is my account safe?</span>
+            <svg class="faq-icon w-5 h-5 text-gaming-muted transition-transform duration-300 flex-shrink-0" fill="none"
+              stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="hidden px-5 pb-5" style="max-height:0;overflow:hidden;transition:max-height 0.3s ease">
+            <p class="text-gaming-muted text-sm leading-relaxed">Absolutely. We use VPN protection matched to your
+              region, play 100% manually, and never use any third-party tools. In our 5,000+ completed services, we've
+              maintained a perfect zero-ban record. Your HoYoverse credentials are shared through encrypted channels and
+              deleted
+              immediately after service completion.</p>
+          </div>
+        </div>
+        <!-- Q2 -->
+        <div class="game-card !p-0 overflow-hidden">
+          <button
+            class="faq-toggle w-full flex items-center justify-between p-5 text-left hover:bg-white/5 transition-colors">
+            <span class="font-heading font-semibold">Do you use cheats or bots?</span>
+            <svg class="faq-icon w-5 h-5 text-gaming-muted transition-transform duration-300 flex-shrink-0" fill="none"
+              stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="hidden px-5 pb-5" style="max-height:0;overflow:hidden;transition:max-height 0.3s ease">
+            <p class="text-gaming-muted text-sm leading-relaxed">Never. We have a strict zero-tolerance policy against
+              cheats, hacks, aimbots, scripts, or any form of third-party software. Every game is played manually by a
+              skilled human player. Any booster found violating this policy is immediately removed from our team.</p>
+          </div>
+        </div>
+        <!-- Q3 -->
+        <div class="game-card !p-0 overflow-hidden">
+          <button
+            class="faq-toggle w-full flex items-center justify-between p-5 text-left hover:bg-white/5 transition-colors">
+            <span class="font-heading font-semibold">What if I get banned?</span>
+            <svg class="faq-icon w-5 h-5 text-gaming-muted transition-transform duration-300 flex-shrink-0" fill="none"
+              stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="hidden px-5 pb-5" style="max-height:0;overflow:hidden;transition:max-height 0.3s ease">
+            <p class="text-gaming-muted text-sm leading-relaxed">While the risk is virtually zero due to our safety
+              measures, in the extremely unlikely event that a ban occurs as a direct result of our service, we offer a
+              full refund. We stand behind our methods and have maintained a zero-ban record across thousands of orders.
+            </p>
+          </div>
+        </div>
+        <!-- Q4 -->
+        <div class="game-card !p-0 overflow-hidden">
+          <button
+            class="faq-toggle w-full flex items-center justify-between p-5 text-left hover:bg-white/5 transition-colors">
+            <span class="font-heading font-semibold">How long does it take?</span>
+            <svg class="faq-icon w-5 h-5 text-gaming-muted transition-transform duration-300 flex-shrink-0" fill="none"
+              stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="hidden px-5 pb-5" style="max-height:0;overflow:hidden;transition:max-height 0.3s ease">
+            <p class="text-gaming-muted text-sm leading-relaxed">Completion time depends on the rank gap and game. Most
+              orders are completed within 1–7 days. Smaller rank jumps (e.g., Gold to Platinum) can be done in 1–2 days,
+              while larger climbs may take up to a week. We provide estimated timeframes with every quote.</p>
+          </div>
+        </div>
+        <!-- Q5 -->
+        <div class="game-card !p-0 overflow-hidden">
+          <button
+            class="faq-toggle w-full flex items-center justify-between p-5 text-left hover:bg-white/5 transition-colors">
+            <span class="font-heading font-semibold">What's your refund policy?</span>
+            <svg class="faq-icon w-5 h-5 text-gaming-muted transition-transform duration-300 flex-shrink-0" fill="none"
+              stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="hidden px-5 pb-5" style="max-height:0;overflow:hidden;transition:max-height 0.3s ease">
+            <p class="text-gaming-muted text-sm leading-relaxed">We offer full refunds if we fail to deliver the
+              agreed-upon rank within the estimated timeframe. Partial refunds are available for partially completed
+              orders. If your account is banned due to our service, you receive a 100% refund. Contact us within 48
+              hours of service completion for any refund requests.</p>
+          </div>
+        </div>
+        <!-- Q6 -->
+        <div class="game-card !p-0 overflow-hidden">
+          <button
+            class="faq-toggle w-full flex items-center justify-between p-5 text-left hover:bg-white/5 transition-colors">
+            <span class="font-heading font-semibold">What payment methods do you accept?</span>
+            <svg class="faq-icon w-5 h-5 text-gaming-muted transition-transform duration-300 flex-shrink-0" fill="none"
+              stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="hidden px-5 pb-5" style="max-height:0;overflow:hidden;transition:max-height 0.3s ease">
+            <p class="text-gaming-muted text-sm leading-relaxed">We accept GCash, PayPal, and bank transfers. All
+              payments are processed manually for security. Once your order is confirmed, we'll provide payment
+              instructions through your preferred method.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ FEEDBACK BUTTON (FOR CLIENT REVIEW) ════════════════ -->
+  <div class="fixed bottom-6 right-6 z-[60]">
+    <button id="feedback-btn"
+      class="flex items-center gap-2 px-5 py-3 rounded-full bg-gaming-purple hover:bg-gaming-purple-light text-white shadow-lg shadow-gaming-purple/30 transition-all hover:scale-105 group">
+      <span class="text-xl">💬</span>
+      <span class="font-bold text-sm">Send Feedback</span>
+    </button>
+  </div>
+
+  <!-- ════════════════ CONTACT ════════════════ -->
+  <section id="contact" class="relative">
+    <div class="section-container">
+      <h2 class="section-title reveal">Get In <span class="gradient-text">Touch</span></h2>
+      <p class="section-subtitle reveal">Ready to rank up? Send us a message and we'll get back to you within a few
+        hours.</p>
+      <div class="max-w-5xl mx-auto grid md:grid-cols-5 gap-8 reveal">
+        <!-- Form -->
+        <div class="md:col-span-3">
+          <form id="contact-form" class="game-card p-6 md:p-8 space-y-5">
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label for="form-name" class="block text-sm font-medium mb-2">Your Name</label>
+                <input type="text" id="form-name" placeholder="John Doe"
+                  class="w-full bg-gaming-dark border border-gaming-border rounded-xl px-4 py-3 text-sm focus:border-gaming-purple focus:outline-none focus:ring-1 focus:ring-gaming-purple transition-colors" />
+              </div>
+              <div>
+                <label for="form-email" class="block text-sm font-medium mb-2">Email Address</label>
+                <input type="email" id="form-email" placeholder="john@email.com"
+                  class="w-full bg-gaming-dark border border-gaming-border rounded-xl px-4 py-3 text-sm focus:border-gaming-purple focus:outline-none focus:ring-1 focus:ring-gaming-purple transition-colors" />
+              </div>
+            </div>
+            <div>
+              <label for="form-game" class="block text-sm font-medium mb-2">Select Service</label>
+              <select id="form-game"
+                class="w-full bg-gaming-dark border border-gaming-border rounded-xl px-4 py-3 text-sm focus:border-gaming-purple focus:outline-none focus:ring-1 focus:ring-gaming-purple transition-colors">
+                <option value="">Choose a service...</option>
+                <option value="maintenance">Maintenance (Dailies)</option>
+                <option value="exploration">Exploration</option>
+                <option value="archon-quest">Archon Quest</option>
+                <option value="oculi">Oculi Hunting</option>
+                <option value="world-quests">World Quests</option>
+                <option value="custom">Custom Request</option>
+              </select>
+            </div>
+            <div>
+              <label for="form-message" class="block text-sm font-medium mb-2">Tell Us About Your Order</label>
+              <textarea id="form-message" rows="4" placeholder="Current rank, desired rank, any preferences..."
+                class="w-full bg-gaming-dark border border-gaming-border rounded-xl px-4 py-3 text-sm focus:border-gaming-purple focus:outline-none focus:ring-1 focus:ring-gaming-purple transition-colors resize-none"></textarea>
+            </div>
+            <button type="submit" class="btn-primary w-full text-base">Place Order 🚀</button>
+          </form>
+        </div>
+        <!-- Contact Info -->
+        <div class="md:col-span-2 space-y-4">
+          <div class="game-card p-6 text-center">
+            <div class="text-3xl mb-3">💬</div>
+            <h3 class="font-heading font-bold mb-1">Discord</h3>
+            <p class="text-gaming-cyan text-sm">EliteBoost#1234</p>
+            <p class="text-gaming-muted text-xs mt-1">Fastest response — usually within minutes</p>
+          </div>
+          <div class="game-card p-6 text-center">
+            <div class="text-3xl mb-3">📧</div>
+            <h3 class="font-heading font-bold mb-1">Email</h3>
+            <p class="text-gaming-cyan text-sm">support@eliteboost.gg</p>
+            <p class="text-gaming-muted text-xs mt-1">Response within 24 hours</p>
+          </div>
+          <div class="game-card p-6 text-center">
+            <div class="text-3xl mb-3">📱</div>
+            <h3 class="font-heading font-bold mb-1">Social Media</h3>
+            <div class="flex justify-center gap-4 mt-2">
+              <a href="#" class="text-gaming-muted hover:text-gaming-cyan transition-colors text-sm">Facebook</a>
+              <a href="#" class="text-gaming-muted hover:text-gaming-cyan transition-colors text-sm">Twitter</a>
+              <a href="#" class="text-gaming-muted hover:text-gaming-cyan transition-colors text-sm">Instagram</a>
+            </div>
+          </div>
+          <div class="glass p-4 text-center">
+            <p class="text-sm text-gaming-muted">⏰ Average Response Time</p>
+            <p class="text-gaming-cyan font-heading font-bold text-lg">Under 2 Hours</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ FOOTER ════════════════ -->
+  <footer class="relative bg-gaming-darker border-t border-gaming-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+        <div>
+          <a href="#" class="flex items-center gap-2 text-xl font-heading font-bold mb-4">
+            <span class="text-2xl">🎮</span><span class="gradient-text">EliteBoost</span>
+          </a>
+          <p class="text-gaming-muted text-sm leading-relaxed">Professional game piloting & rank boosting. Safe, fast,
+            and affordable.</p>
+        </div>
+        <div>
+          <h4 class="font-heading font-bold mb-4">Quick Links</h4>
+          <div class="space-y-2 text-sm">
+            <a href="#services" class="block text-gaming-muted hover:text-white transition-colors">Services</a>
+            <a href="#how-it-works" class="block text-gaming-muted hover:text-white transition-colors">How It Works</a>
+            <a href="#safety" class="block text-gaming-muted hover:text-white transition-colors">Safety</a>
+            <a href="#reviews" class="block text-gaming-muted hover:text-white transition-colors">Reviews</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="font-heading font-bold mb-4">Support</h4>
+          <div class="space-y-2 text-sm">
+            <a href="#faq" class="block text-gaming-muted hover:text-white transition-colors">FAQ</a>
+            <a href="#contact" class="block text-gaming-muted hover:text-white transition-colors">Contact Us</a>
+            <a href="#" class="block text-gaming-muted hover:text-white transition-colors">Terms of Service</a>
+            <a href="#" class="block text-gaming-muted hover:text-white transition-colors">Privacy Policy</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="font-heading font-bold mb-4">Payment Methods</h4>
+          <div class="space-y-2 text-sm text-gaming-muted">
+            <div>💳 PayPal</div>
+            <div>📱 GCash</div>
+            <div>🏦 Bank Transfer</div>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gaming-border pt-8 text-center">
+        <p class="text-gaming-muted text-xs mb-2">© 2026 EliteBoost. All rights reserved.</p>
+        <p class="text-gaming-muted/60 text-xs max-w-2xl mx-auto">Disclaimer: EliteBoost is not affiliated with,
+          endorsed by, or connected to HoYoverse (miHoYo). Genshin Impact and all related trademarks are the property of
+          their respective owners.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ════════════════ FEEDBACK MODAL ════════════════ -->
+  <div id="feedback-modal" class="fixed inset-0 z-[100] hidden items-center justify-center">
+    <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" id="feedback-modal-overlay"></div>
+    <div class="relative w-full max-w-md mx-4 game-card p-0 overflow-hidden animate-slide-up">
+      <!-- Modal Header -->
+      <div class="flex items-center justify-between p-6 pb-0">
+        <h2 class="text-xl font-heading font-bold gradient-text">Client Review Feedback</h2>
+        <button id="feedback-modal-close" class="text-gaming-muted hover:text-white transition-colors p-1">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <form id="feedback-form" class="p-6 space-y-4">
+        <p class="text-gaming-muted text-sm">Your feedback helps us perfect the site. Please let us know your thoughts
+          or any changes you'd like to see.</p>
+        <div>
+          <label for="feedback-section" class="block text-sm font-medium mb-2">Section / Feature</label>
+          <input type="text" id="feedback-section" placeholder="e.g. Hero Section, Services, Contact Form"
+            class="w-full bg-gaming-dark border border-gaming-border rounded-xl px-4 py-3 text-sm focus:border-gaming-purple focus:outline-none focus:ring-1 focus:ring-gaming-purple transition-colors" />
+        </div>
+        <div>
+          <label for="feedback-message" class="block text-sm font-medium mb-2">Comment</label>
+          <textarea id="feedback-message" rows="4" placeholder="Your suggestions or issues..." required
+            class="w-full bg-gaming-dark border border-gaming-border rounded-xl px-4 py-3 text-sm focus:border-gaming-purple focus:outline-none focus:ring-1 focus:ring-gaming-purple transition-colors resize-none"></textarea>
+        </div>
+        <button type="submit" class="btn-primary w-full">Submit Feedback</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ════════════════ AUTH MODAL ════════════════ -->
+  <div id="auth-modal" class="fixed inset-0 z-[100] hidden items-center justify-center">
+    <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" id="auth-modal-overlay"></div>
+    <div class="relative w-full max-w-md mx-4 game-card p-0 overflow-hidden animate-slide-up">
+      <!-- Modal Header -->
+      <div class="flex items-center justify-between p-6 pb-0">
+        <h2 class="text-xl font-heading font-bold gradient-text" id="auth-modal-title">Welcome Back</h2>
+        <button id="auth-modal-close" class="text-gaming-muted hover:text-white transition-colors p-1">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <!-- Tabs -->
+      <div class="flex border-b border-gaming-border mx-6 mt-4">
+        <button class="auth-tab flex-1 py-3 text-sm font-medium text-center transition-colors border-b-2"
+          data-tab="login" id="tab-login">Login</button>
+        <button
+          class="auth-tab flex-1 py-3 text-sm font-medium text-center transition-colors border-b-2 border-transparent text-gaming-muted"
+          data-tab="register" id="tab-register">Register</button>
+      </div>
+      <!-- Login Form -->
+      <form id="login-form" class="p-6 space-y-4">
+        <div id="login-error" class="hidden p-3 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-sm">
+        </div>
+        <div>
+          <label for="login-email" class="block text-sm font-medium mb-2">Email</label>
+          <input type="email" id="login-email" placeholder="you@email.com" required
+            class="w-full bg-gaming-dark border border-gaming-border rounded-xl px-4 py-3 text-sm focus:border-gaming-purple focus:outline-none focus:ring-1 focus:ring-gaming-purple transition-colors" />
+        </div>
+        <div>
+          <label for="login-password" class="block text-sm font-medium mb-2">Password</label>
+          <input type="password" id="login-password" placeholder="••••••••" required
+            class="w-full bg-gaming-dark border border-gaming-border rounded-xl px-4 py-3 text-sm focus:border-gaming-purple focus:outline-none focus:ring-1 focus:ring-gaming-purple transition-colors" />
+        </div>
+        <button type="submit" class="btn-primary w-full">Login</button>
+        <p class="text-center text-sm text-gaming-muted">Don't have an account? <button type="button"
+            class="text-gaming-cyan hover:underline switch-to-register">Register</button></p>
+      </form>
+      <!-- Register Form -->
+      <form id="register-form" class="p-6 space-y-4 hidden">
+        <div id="register-error"
+          class="hidden p-3 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-sm"></div>
+        <div>
+          <label for="register-name" class="block text-sm font-medium mb-2">Full Name</label>
+          <input type="text" id="register-name" placeholder="John Doe" required
+            class="w-full bg-gaming-dark border border-gaming-border rounded-xl px-4 py-3 text-sm focus:border-gaming-purple focus:outline-none focus:ring-1 focus:ring-gaming-purple transition-colors" />
+        </div>
+        <div>
+          <label for="register-email" class="block text-sm font-medium mb-2">Email</label>
+          <input type="email" id="register-email" placeholder="you@email.com" required
+            class="w-full bg-gaming-dark border border-gaming-border rounded-xl px-4 py-3 text-sm focus:border-gaming-purple focus:outline-none focus:ring-1 focus:ring-gaming-purple transition-colors" />
+        </div>
+        <div>
+          <label for="register-password" class="block text-sm font-medium mb-2">Password</label>
+          <input type="password" id="register-password" placeholder="Min. 6 characters" required
+            class="w-full bg-gaming-dark border border-gaming-border rounded-xl px-4 py-3 text-sm focus:border-gaming-purple focus:outline-none focus:ring-1 focus:ring-gaming-purple transition-colors" />
+        </div>
+        <div>
+          <label for="register-confirm" class="block text-sm font-medium mb-2">Confirm Password</label>
+          <input type="password" id="register-confirm" placeholder="••••••••" required
+            class="w-full bg-gaming-dark border border-gaming-border rounded-xl px-4 py-3 text-sm focus:border-gaming-purple focus:outline-none focus:ring-1 focus:ring-gaming-purple transition-colors" />
+        </div>
+        <button type="submit" class="btn-primary w-full">Create Account</button>
+        <p class="text-center text-sm text-gaming-muted">Already have an account? <button type="button"
+            class="text-gaming-cyan hover:underline switch-to-login">Login</button></p>
+      </form>
+    </div>
+  </div>
+
+</body>
+
+</html>
