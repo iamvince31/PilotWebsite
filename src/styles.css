@@ -83,6 +83,10 @@
     @apply bg-gaming-card border border-gaming-border rounded-2xl p-6 hover:border-gaming-purple/50 hover:shadow-[0_0_30px_#7c3aed26] transition-all duration-300 ease-out;
   }
 
+  .game-card:hover .text-gaming-muted {
+    @apply text-white/90;
+  }
+
   /* ── Glass Effect ── */
   .glass {
     @apply bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl;
